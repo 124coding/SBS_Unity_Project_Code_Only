@@ -28,17 +28,17 @@
 - **문제:** 다단 히트 스킬 연출 도중 타겟이 사망하면 타겟팅이 꼬여 데미지가 중복되거나 허공에 투사체가 날아가는 상태 동기화 에러 발생.
 - **해결 (`Target Snapshot & Filtering` 패턴):** - 수치 연산 전담(`BattleLogicHandler`)과 시각적 연출 전담(`CharacterAction`)으로 관심사 완전 분리.
   - 스킬 시전 시점의 타겟 명세서를 **스냅샷(Snapshot)**으로 캡처하고, 실제 투사체 적중 시 교집합을 필터링하여 데미지를 부여함으로써 헛스윙과 중복 연산 원천 차단.
-- **📁 관련 코드:** [`BattleLogicHandler.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Battle/BattleLogicHandler.cs)), [`CharacterAction.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/CharacterAction.cs))
+- **📁 관련 코드:** [`BattleLogicHandler.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Battle/BattleLogicHandler.cs), [`CharacterAction.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/CharacterAction.cs)
 
 ### 2. EffectPayload 기반 데이터 주도 설계(Data-Driven)와 Enemy AI
 - **설계:** 데미지 공식, 타겟팅 조건, 상태이상 정보를 하나의 `EffectPayload` 구조체로 모듈화하여 확장성 확보. 기획자가 코드 수정 없이 스킬 기믹 조립 가능.
 - **AI 행동 평가 (Utility AI 기초):** 적 AI가 무작위로 행동하지 않고, `EffectPayload` 내부에 설계된 `aiWeight` 값과 현재 전장 상황(적 체력, 버프 상태)을 계산하여 **가장 점수(Score)가 높은 합리적 행동을 선택**하도록 설계.
-- **📁 관련 코드:** [`EffectSystem.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/EffectSystem.cs)), [`EnemyAI.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/Enemy/EnemyAI.cs))
+- **📁 관련 코드:** [`EffectSystem.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/EffectSystem.cs), [`EnemyAI.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Character/Enemy/EnemyAI.cs)
 
 ### 3. 2D 물리 주기 동기화 및 렌더링 최적화
 - **Jittering(떨림) 해결:** 무빙 플랫폼 이동 시 화면 떨림 현상을 분석, `FixedUpdate`와 `Cinemachine` 주기를 동기화하고 발판 이동을 `Rigidbody2D.MovePosition`으로 제어하여 이동 동기화 물리 구현.
 - **가비지 컬렉션(GC) 및 물리 최적화:** - `CompositeCollider2D`를 통한 맵 전체 다각망(Baking) 병합으로 물리 연산 과부하 제거.
   - 룸(Room) 단위 청크 렌더링 시스템 및 애니메이션 이벤트(`EndAction`)와 연동된 이펙트 오브젝트 풀링(Object Pooling) 구축.
-- **📁 관련 코드:** [`MovingPlatform.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Field/WorkObject/MovingPlatform.cs)), [`RoomManager.cs`]([링크](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Room/RoomManager.cs))
+- **📁 관련 코드:** [`MovingPlatform.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Field/WorkObject/MovingPlatform.cs), [`RoomManager.cs`](https://github.com/124coding/SBS_Unity_Project_Code_Only/blob/main/Room/RoomManager.cs)
 
 <br>
