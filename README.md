@@ -6,9 +6,8 @@
 <br>
 
 ## 🎥 게임 시연 (Play Video)
-![Game_Play_GIF_링크_넣기](여기에_핵심전투_움짤_링크_삽입.gif)
-* 📺 **[YouTube 전체 플레이 영상 보기](유튜브_링크_삽입)**
-* 🎮 **[실행 가능한 빌드 다운로드](구글드라이브_또는_itch.io_링크_삽입)**
+![Game_Play_GIF_링크_넣기](https://github.com/user-attachments/assets/8d17c66b-31a1-4d9a-9813-d8e5e8425c98)
+* 🎮 **[실행 가능한 빌드 다운로드](https://drive.google.com/file/d/1FiApNJU23u6KGXH0PV7Cc7UtTrZ1kg1U/view?usp=sharing)** - 개발중이기에 버그 발생 가능
 
 <br>
 
