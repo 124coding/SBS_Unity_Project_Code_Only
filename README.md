@@ -7,7 +7,7 @@
 
 ## 🎥 게임 시연 (Play Video)
 ![Game_Play_GIF_링크_넣기](https://github.com/user-attachments/assets/8d17c66b-31a1-4d9a-9813-d8e5e8425c98)
-* 🎮 **[실행 가능한 빌드 다운로드](https://drive.google.com/file/d/1FiApNJU23u6KGXH0PV7Cc7UtTrZ1kg1U/view?usp=sharing)** - 개발중이기에 버그 발생 가능
+* 🎮 **[실행 가능한 빌드 다운로드](https://drive.google.com/file/d/1UkoMRD0vAzhW9uAXNvmQK8LmnKUh0pWt/view?usp=sharing)** - 개발중이기에 버그 발생 가능
 
 <br>
 
